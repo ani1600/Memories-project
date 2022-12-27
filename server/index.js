@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 app.use(cors());
 app.use("/posts", postRoutes);
+app.get("/", (req, res) => {
+  res.send("hello to memories API");
+});
 
 const PORT = process.env.PORT;
 const CONNECTION_URL = process.env.CONNECTION_URL;
